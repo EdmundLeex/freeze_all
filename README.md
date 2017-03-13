@@ -1,8 +1,23 @@
 # FreezeAll
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/freeze_all`. To experiment with that code, run `bin/console` for an interactive prompt.
+Do you have these types of code in your code base?
 
-TODO: Delete this and the text above, and describe your gem
+```ruby
+FOO = 'FOO'.freeze
+BAR = 'BAR'.freeze
+FOOBAR = 'FOOBAR'.freeze
+
+FOO_ARR = [FOO, BAR, FOOBAR].freeze
+
+FOOBAR_STATUSES = [
+  'FOO'.freeze,
+  'BAR'.freeze
+].freeze
+```
+
+If so, this gem is perfect for you. FreezeAll adds a convenient `freeze_all` 
+method to Array and Hash class, and allow you to freeze all objects within the 
+Array/Hash and the Array/Hash itself.
 
 ## Installation
 
@@ -22,18 +37,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+FOO = 'FOO'
+BAR = 'BAR'
+FOOBAR = 'FOOBAR'
 
-## Development
+FOO_ARR = [FOO, BAR, FOOBAR].freeze_all
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+FOOBAR_STATUSES = {
+  status_a: 'status_a',
+  status_b: 'status_b'
+}.freeze_all
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/freeze_all. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+You can help by doing these. :)
 
+- report issues
+- fork this repo, and create your PR.
 
 ## License
 
